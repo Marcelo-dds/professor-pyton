@@ -1,16 +1,16 @@
+# chat.py
+
 import streamlit as st
-from gpt import professor_virtual
+from  gpt import professor_virtual
+from dotenv import load_dotenv
 import openai
 import os
-from dotenv import load_dotenv
 
-# Defina sua chave de API da OpenAI
+# Carrega variáveis de ambiente do arquivo .env
 load_dotenv()
-openai.api_key = os.getenv('OPENAI_API_KEY')
 
-# Configurar proxy
-os.environ['HTTPS_PROXY'] = "http://proxy.almg.uucp:3128"
-os.environ['HTTP_PROXY'] = "http://proxy.almg.uucp:3128"
+# Define a chave de API da OpenAI
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 st.set_page_config(layout="centered")  # Centraliza o layout da página
 st.image("logo.png", width=200)
